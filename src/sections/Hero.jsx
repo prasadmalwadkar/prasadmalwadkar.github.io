@@ -1,46 +1,63 @@
-import React from 'react';
-import { Github, Linkedin, Mail, FileText } from 'lucide-react';
+import { useState } from 'react';
 import { content } from '../data/content';
-import './Hero.css';
 
 const Hero = () => {
-    const { personal } = content;
+  const { personal } = content;
+  const [copied, setCopied] = useState(false);
+  const [photo, setPhoto] = useState(true);
 
-    return (
-        <section className="hero">
-            <div className="container hero-container">
-                <div className="hero-content">
-                    <p className="greeting">Hi, I'm</p>
-                    <h1 className="name">{personal.name}</h1>
-                    <h2 className="title">{personal.title}</h2>
-                    <p className="location">{personal.location}</p>
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(personal.email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1400);
+    } catch {
+      setCopied(false);
+    }
+  };
 
-                    <div className="social-links">
-                        <a href={personal.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <Github size={24} />
-                        </a>
-                        <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <Linkedin size={24} />
-                        </a>
-                        <a href={`mailto:${personal.email}`} aria-label="Email">
-                            <Mail size={24} />
-                        </a>
-                    </div>
+  return (
+    <header className="hero" id="top">
+      <div className="lanyard">
+        <div className="strap" aria-hidden="true">Prasad Malwadkar</div>
+        <div className="clip" aria-hidden="true" />
+        <div className="pass">
+          <div className="mark">
+            {photo && (
+              <img src="/portrait.jpg" alt="" onError={() => setPhoto(false)} />
+            )}
+            <span>PM</span>
+          </div>
+          <h1>
+            Prasad
+            <br />
+            Malwadkar
+          </h1>
+          <p className="pass-role">Founding engineer</p>
+          <p className="pass-co">Flair Labs · Seattle</p>
+        </div>
+      </div>
 
-                    <div className="cta-buttons">
-                        <a href="#projects" className="btn btn-primary">View Work</a>
-                        <a href="#" className="btn btn-outline">
-                            <FileText size={18} style={{ marginRight: '8px' }} />
-                            Resume
-                        </a>
-                    </div>
-                </div>
-                <div className="hero-visual">
-                    <div className="blob"></div>
-                </div>
-            </div>
-        </section>
-    );
+      <p className="hero-role">
+        I build voice products and the systems behind them.
+      </p>
+      <p className="open-line">
+        <a href="#contact">Open to chat</a>
+        <span> — new work, voice systems, whatever you are building.</span>
+      </p>
+      <div className="hero-meta">
+        <span>{personal.location}</span>
+        <a href={`mailto:${personal.email}`}>{personal.email}</a>
+        <button type="button" className="copy" onClick={copyEmail}>
+          {copied ? 'Copied' : 'Copy'}
+        </button>
+        <a href={personal.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href={personal.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href={`tel:${personal.phone.replace(/[^\d+]/g, '')}`}>{personal.phone}</a>
+        <a href="/Prasad-Malwadkar-Resume.pdf" download>Resume</a>
+      </div>
+    </header>
+  );
 };
 
 export default Hero;

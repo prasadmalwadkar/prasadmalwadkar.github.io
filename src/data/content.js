@@ -1,101 +1,140 @@
 export const content = {
     personal: {
         name: "Prasad Malwadkar",
+        role: "Founding backend engineer",
+        line: "Backend, cloud systems, and LLM-powered voice.",
         email: "malwadkarprasad99@gmail.com",
-        phone: "+1(213) 272-5083",
+        phone: "+1 (213) 272-5083",
+        location: "Seattle, WA",
         linkedin: "https://www.linkedin.com/in/prasad-malwadkar/",
-        github: "https://github.com/prasadmalwadkar", // Assumed based on context
-        title: "Software Development Engineer | Data Engineer",
-        location: "San Jose, CA",
-    },
-    education: [
-        {
-            degree: "Master of Applied Data Science",
-            school: "University of Southern California",
-            date: "Dec 2025",
-            coursework: "Machine Learning, Predictive Analytics, Data Management, Data Mining, Advanced Data Stores"
-        },
-        {
-            degree: "Bachelor of Engineering",
-            school: "Pune Institute of Computer Technology",
-            date: "Jun 2021",
-            coursework: "Statistical Analytics, Object Oriented Programming, Telecommunications, DBMS, Data Analytics"
-        }
-    ],
-    skills: {
-        languages: ["Python", "C++", "Go", "TypeScript", "Ruby", "SQL", "Postgres", "DynamoDB", "Oracle", "NoSQL", "Redshift"],
-        libraries: ["Pandas", "NumPy", "SciPy", "Sklearn", "TensorFlow", "PyTorch", "Keras", "Matplotlib", "Seaborn", "AWS CDK"],
-        technologies: ["Hadoop", "Hive", "Databricks", "GitHub", "PySpark", "AWS (Lambda, EC2, S3)", "Talend", "Informatica"],
-        ml: ["Regression", "Random Forest", "SVM", "XGBoost", "CatBoost", "LightGBM", "Neural Networks", "MLOps"]
+        github: "https://github.com/prasadmalwadkar",
+        updated: "October 2026",
     },
     experience: [
         {
+            role: "Founding Backend Engineer",
+            company: "Flair Labs",
+            note: "YC W24",
+            date: "Apr 2026 — Present",
+            points: [
+                "Designed a multi-tenant voice architecture on Redis distributed locks, Cloud Run, and GCP. Lead conversion up 30%.",
+                "Led a provider migration that cut cloud egress 40%, for millions of daily outbound interactions.",
+                "Built speech-to-speech number rotation at 40k–80k calls/day, with DNC compliance.",
+                "Ran architecture reviews for live-transfer routing and took accounts from zero to production.",
+            ],
+        },
+        {
             role: "SDE Intern",
-            company: "Amazon Web Services (AWS)",
-            date: "May 2025 - Aug 2025",
-            description: [
-                "Automated key rotation workflows using AWS Lambda and Secrets Manager, reducing manual effort by 80%.",
-                "Migrated test infrastructure from legacy systems to modern platforms, improving reliability by 30% and enabling automated validations.",
-                "Implemented multi-region deployment strategies, strengthening compliance and secure data handling across 10+ regions.",
-                "Partnered with cross-functional teams to optimize validation pipelines, accelerating release cycles by 25%."
-            ]
+            company: "Amazon",
+            note: "AWS",
+            date: "May 2025 — Aug 2025",
+            points: [
+                "Automated EC2 key rotation with CloudFormation so AI agents could use the same infra tools. Manual ops down 80%.",
+                "Moved legacy test infrastructure onto microservices. AI validations in CI/CD. Reliability up 30%.",
+            ],
         },
         {
-            role: "Data warehouse/BI Developer",
+            role: "Senior Software Developer",
             company: "Amdocs",
-            date: "May 2023 - Dec 2023",
-            description: [
-                "Engineered data ingestion workflows from GraphQL API to HDFS, reducing data retrieval times by 30%, and implemented OAuth 2.0 authentication.",
-                "Developed predictive machine learning models for customer churn analysis, achieving 85% accuracy.",
-                "Leveraged Hive, Hadoop, and PySpark for efficient data manipulation, loading, and high-speed transfer to HBase."
-            ]
+            date: "May 2023 — Dec 2023",
+            points: [
+                "Pipelines in Talend and Informatica ingested GraphQL into HDFS, with OAuth 2.0. API latency down 30%.",
+                "Tuned ETL on Hadoop and HBase with Hive and PySpark. Transfer rates up 40%.",
+                "Built predictive processing and a UI query layer that cut manual work and subscriber churn.",
+            ],
         },
         {
-            role: "Data Engineer",
+            role: "Software Engineer",
             company: "Amdocs",
-            date: "Aug 2021 - May 2023",
-            description: [
-                "Optimized ETL workflows using Python, and Linux scripting, reducing processing time by 35%.",
-                "Spearheaded performance tuning and migration of 1.5 million customer records, improving system efficiency by 25%.",
-                "Developed custom ETL pipelines as a solution architect, leveraging crontab for automated batch processing."
-            ]
-        }
+            date: "Aug 2021 — May 2023",
+            points: [
+                "Tuned Informatica ETL with critical-path analysis. Runtime down 45%.",
+                "Ran a Three Gates migration for 2.5M customer records. Full consistency, 99.9% uptime.",
+                "Shipped event-driven batch processing and lowered error rates on core data layers.",
+            ],
+        },
     ],
     projects: [
         {
-            title: "Automated Telecom Customer Churn Analysis",
-            tech: "Python, Airflow, AWS Glue, Redshift, SQL, Tableau",
-            description: [
-                "Automated the entire ETL pipeline using Apache Airflow, enabling seamless integration of data from CSVs.",
-                "Optimized model deployment on AWS for scalability and quicker predictions, leveraging services like Amazon S3 and SageMaker.",
-                "Designed a user-friendly dashboard using Tableau to visualize customer trends, churn rates, and segmentation."
-            ]
+            title: "AI Voice Gateway",
+            tag: "voice",
+            meta: "FastAPI · Twilio · Gemini · Cartesia",
+            summary: "Phone intake. Twilio audio goes to streaming STT, a server-side Gemini agent, then Sonic TTS, and a Playwright worker fills the form from a queue.",
+            href: null,
+        },
+        {
+            title: "mockfolio",
+            tag: "product",
+            meta: "Next.js · Drizzle · Alpaca",
+            summary: "Paper trading against live market data, with a required reasoning journal, morning brief, and Telegram.",
+            href: "https://mockfolio-web.vercel.app",
+        },
+        {
+            title: "calchat",
+            tag: "product",
+            meta: "React · Express · Expo",
+            summary: "Voice-first calorie tracker. Say what you ate. An offline parser logs calories and macros against the daily goal.",
+            href: "https://calchat-backend-blush.vercel.app",
+        },
+        {
+            title: "Fintech Agent Orchestrator",
+            tag: "systems",
+            meta: "FastAPI · React Flow · Next.js",
+            summary: "Drag a network of agents, set handoff rules, then test them in text or voice. Chunked summary memory cut token cost by 60%.",
+            href: "https://github.com/prasadmalwadkar/Fintech-Multi-Agent",
+        },
+        {
+            title: "Bloom Filter Hash Join",
+            tag: "systems",
+            meta: "C++ · DuckDB",
+            summary: "Bloom filter pushdown in the DuckDB planner. Probe lookups down 45%, up to 2.5× on selective joins.",
+            href: null,
+        },
+        {
+            title: "Telecom Churn Pipeline",
+            tag: "systems",
+            meta: "Python · Airflow · Redshift",
+            summary: "ETL from customer files into a churn model on AWS, with a Tableau view of segments and rates.",
+            href: null,
         },
         {
             title: "Smart Wellness Program",
-            tech: "Python, Django, SQLite, Javascript, HTML, CSS",
-            description: [
-                "Developed the Smart Wellness Program, enhancing the record-keeping accuracy for doctors and patients by 40%.",
-                "Applied strategic project management to optimize the scheduling of patient appointments, achieving a 30% improvement."
-            ]
+            tag: "product",
+            meta: "Django · SQLite",
+            summary: "Records and scheduling for clinics. Published in IJCRT, December 2022.",
+            href: null,
+        },
+    ],
+    education: [
+        {
+            school: "University of Southern California",
+            degree: "Master of Data Science",
+            date: "Jan 2024 — Dec 2025",
+            coursework: "Machine Learning, Predictive Analytics, Algorithms, Data Mining, Advanced Data Stores, AI",
         },
         {
-            title: "Bloom Filter-Aided Hash Join Optimization",
-            tech: "C++, DuckDB, Data Stores, Query Optimization",
-            description: [
-                "Engineered and integrated a multi-level Bloom filter into DuckDB's hash join operator using C++, prefiltering 100K+ probe-side keys.",
-                "Achieved up to 2.5x speedup on selective join workloads by optimizing query plan execution."
-            ]
-        }
+            school: "Pune Institute of Computer Technology",
+            degree: "Bachelor of Engineering",
+            date: "Jun 2021",
+            coursework: "Statistical Analytics, Object Oriented Programming, DBMS, Data Analytics",
+        },
     ],
-    certifications: [
-        "Certified in Snowflake Hands-on Essentials",
-        "Advanced SQL Tuning",
-        "Microsoft Undergraduate Engineering Virtual Internship Platform",
-        "Linux Bash Shell and Scripts",
-        "IBM Python for Data Science"
+    skills: [
+        {
+            label: "Languages & data",
+            items: "Python, TypeScript, JavaScript, Go, C++, SQL, Postgres, DynamoDB, Vector DB",
+        },
+        {
+            label: "Web",
+            items: "React, Next.js, Node.js, Django, Express, REST, GraphQL, Redis",
+        },
+        {
+            label: "AI",
+            items: "LLM integration, MCP servers, LangChain, RAG, predictive analytics",
+        },
+        {
+            label: "Cloud",
+            items: "AWS Lambda, S3, EC2, Docker, Cloud Run, GCP, CI/CD",
+        },
     ],
-    publications: [
-        "Co-authored \"Smart Wellness Program\" published in International Journal of Creative Research Thoughts (IJCRT), December 2022, Volume 10, Issue 12."
-    ]
 };
