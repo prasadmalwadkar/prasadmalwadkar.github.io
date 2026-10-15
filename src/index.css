@@ -612,6 +612,13 @@ html[data-theme="light"] .pass-co {
   color: #c9c0b6;
 }
 
+html[data-theme="light"] .cover:first-child {
+  background:
+    radial-gradient(420px 180px at 100% 0%, rgba(154, 78, 42, 0.16), transparent 64%),
+    linear-gradient(165deg, #fffdf8 0%, #f3e6d4 100%);
+  color: var(--ink);
+}
+
 .hero-role {
   text-align: center;
   margin-left: auto;
