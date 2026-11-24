@@ -355,6 +355,50 @@ a.cover:hover {
   padding: 0.16rem 0.45rem;
 }
 
+.cover-pills {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.pill-ghost {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+.cover-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+.cover-links a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--clay);
+  text-underline-offset: 3px;
+}
+
+.cover-links a:hover {
+  color: var(--clay);
+}
+
+.projects-more {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.projects-more a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--clay);
+  text-underline-offset: 3px;
+}
+
 .skill {
   display: grid;
   grid-template-columns: 8.5rem 1fr;

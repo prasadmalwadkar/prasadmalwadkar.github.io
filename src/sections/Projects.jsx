@@ -4,7 +4,7 @@ import { content } from '../data/content';
 const filters = ['All', 'Live', 'Voice', 'Products', 'Systems'];
 
 const matches = (project, filter) => {
-  if (filter === 'Live') return Boolean(project.href) && !project.href.includes('github.com');
+  if (filter === 'Live') return Boolean(project.href);
   if (filter === 'Voice') return project.tag === 'voice';
   if (filter === 'Products') return project.tag === 'product';
   if (filter === 'Systems') return project.tag === 'systems';
@@ -58,42 +58,41 @@ const Projects = () => {
         </div>
       </div>
       <div className={view === 'list' ? 'covers list' : 'covers'}>
-        {shown.map(({ project, index }) => {
-          const body = (
-            <>
-              <div className="cover-top">
-                <span className="idx">{String(index + 1).padStart(2, '0')}</span>
+        {shown.map(({ project, index }) => (
+          <article className="cover" key={project.title}>
+            <div className="cover-top">
+              <span className="idx">{String(index + 1).padStart(2, '0')}</span>
+              <span className="cover-pills">
+                {project.href ? <span className="pill">Live</span> : null}
+                {project.github ? <span className="pill pill-ghost">GitHub</span> : null}
+              </span>
+            </div>
+            <h3>{project.title}</h3>
+            <p>{project.summary}</p>
+            <span className="row-meta">{project.meta}</span>
+            {project.href || project.github ? (
+              <span className="cover-links">
                 {project.href ? (
-                  <span className="pill">{project.href.includes('github.com') ? 'GitHub' : 'Live'}</span>
+                  <a href={project.href} target="_blank" rel="noopener noreferrer">
+                    Live demo ↗
+                  </a>
                 ) : null}
-              </div>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <span className="row-meta">{project.meta}</span>
-            </>
-          );
-
-          if (!project.href) {
-            return (
-              <article className="cover" key={project.title}>
-                {body}
-              </article>
-            );
-          }
-
-          return (
-            <a
-              className="cover"
-              key={project.title}
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {body}
-            </a>
-          );
-        })}
+                {project.github ? (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    GitHub ↗
+                  </a>
+                ) : null}
+              </span>
+            ) : null}
+          </article>
+        ))}
       </div>
+      <p className="projects-more">
+        More on{' '}
+        <a href={content.personal.github} target="_blank" rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+      </p>
     </section>
   );
 };

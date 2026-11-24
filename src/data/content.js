@@ -8,7 +8,7 @@ export const content = {
         location: "Seattle, WA",
         linkedin: "https://www.linkedin.com/in/prasad-malwadkar/",
         github: "https://github.com/prasadmalwadkar",
-        updated: "October 2026",
+        updated: "November 2026",
     },
     experience: [
         {
@@ -56,11 +56,28 @@ export const content = {
     ],
     projects: [
         {
+            title: "ShipFloor",
+            tag: "product",
+            meta: "TypeScript · Bun · SQLite / Postgres",
+            summary: "A team of AI coding agents in one browser office. Hire specialists on Claude, Codex, Gemini, or Cursor, approve a plan, and watch parallel workstreams merge — with budgets and approvals built in.",
+            href: "https://shipfloor.vercel.app",
+            github: null,
+        },
+        {
+            title: "VPCdock",
+            tag: "systems",
+            meta: "TypeScript · Kubernetes · Argo CD",
+            summary: "Deploy a SaaS stack into customer VPCs and run the fleet from one control plane. Pull-based, outbound-only agents ship signed, digest-pinned releases with blue-green deploys — no inbound ports, no vendor keys in the cluster.",
+            href: "https://vpcdock.vercel.app",
+            github: null,
+        },
+        {
             title: "AI Voice Gateway",
             tag: "voice",
             meta: "FastAPI · Twilio · Gemini · Cartesia",
             summary: "Phone intake. Twilio audio goes to streaming STT, a server-side Gemini agent, then Sonic TTS, and a Playwright worker fills the form from a queue.",
             href: null,
+            github: "https://github.com/prasadmalwadkar/AI-Voice-Gateway",
         },
         {
             title: "mockfolio",
@@ -68,6 +85,7 @@ export const content = {
             meta: "Next.js · Drizzle · Alpaca",
             summary: "Paper trading against live market data, with a required reasoning journal, morning brief, and Telegram.",
             href: "https://mockfolio-web.vercel.app",
+            github: null,
         },
         {
             title: "calchat",
@@ -75,13 +93,23 @@ export const content = {
             meta: "React · Express · Expo",
             summary: "Voice-first calorie tracker. Say what you ate. An offline parser logs calories and macros against the daily goal.",
             href: "https://calchat-backend-blush.vercel.app",
+            github: null,
         },
         {
             title: "Fintech Agent Orchestrator",
             tag: "systems",
             meta: "FastAPI · React Flow · Next.js",
             summary: "Drag a network of agents, set handoff rules, then test them in text or voice. Chunked summary memory cut token cost by 60%.",
-            href: "https://github.com/prasadmalwadkar/Fintech-Multi-Agent",
+            href: null,
+            github: "https://github.com/prasadmalwadkar/Fintech-Multi-Agent",
+        },
+        {
+            title: "RAG Engine",
+            tag: "systems",
+            meta: "Python · ChromaDB · OpenAI · LlamaParse",
+            summary: "Production-grade retrieval over multiple document sources. Cloud PDF parsing, semantic chunking, and vector search return answers with inline source, page, and section citations.",
+            href: null,
+            github: "https://github.com/prasadmalwadkar/RAG-Engine",
         },
         {
             title: "Bloom Filter Hash Join",
@@ -89,6 +117,7 @@ export const content = {
             meta: "C++ · DuckDB",
             summary: "Bloom filter pushdown in the DuckDB planner. Probe lookups down 45%, up to 2.5× on selective joins.",
             href: null,
+            github: null,
         },
         {
             title: "Telecom Churn Pipeline",
@@ -96,6 +125,31 @@ export const content = {
             meta: "Python · Airflow · Redshift",
             summary: "ETL from customer files into a churn model on AWS, with a Tableau view of segments and rates.",
             href: null,
+            github: "https://github.com/prasadmalwadkar/Telecom-Customer-Churn-Data-Pipeline",
+        },
+        {
+            title: "Twitter Information Operation Analysis",
+            tag: "systems",
+            meta: "Python · scikit-learn · Gemini",
+            summary: "Detecting a China-originated information operation across ~1.9M tweets: temporal, network, and coordination analysis, narrative clustering, and a Gemini query agent. Built on WWW 2024/2025 research data.",
+            href: null,
+            github: "https://github.com/prasadmalwadkar/twitter-infoop-analysis",
+        },
+        {
+            title: "Credit Risk Model Stability",
+            tag: "systems",
+            meta: "Python · Jupyter · Machine Learning",
+            summary: "Notebook study of how credit-risk models hold up over time — tracking stability and drift so a score that worked at launch does not silently decay in production.",
+            href: null,
+            github: "https://github.com/prasadmalwadkar/Credit-Risk-Model-Stability",
+        },
+        {
+            title: "PennyWise — GA4 Playground",
+            tag: "product",
+            meta: "JavaScript · GA4 · BigQuery",
+            summary: "A small finance dashboard wired end to end for analytics: gtag events in the browser, through to BigQuery SQL that flattens the raw GA4 export into queryable rows.",
+            href: null,
+            github: "https://github.com/prasadmalwadkar/PennyWise--GA4-POC",
         },
         {
             title: "Smart Wellness Program",
@@ -103,6 +157,7 @@ export const content = {
             meta: "Django · SQLite",
             summary: "Records and scheduling for clinics. Published in IJCRT, December 2022.",
             href: null,
+            github: "https://github.com/prasadmalwadkar/Smart_Wellness_Program",
         },
     ],
     education: [
